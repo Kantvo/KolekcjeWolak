@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="kolekcjewolak.Kolekcja"
+             Title="Kolekcja">
+    <StackLayout Padding="20">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Dodaj element" Clicked="DodajElement" Margin="5"/>
+            <Button Text="Edytuj element" Clicked="EdytujElement" Margin="5"/>
+            <Button Text="Usuń element" Clicked="UsunElement" Margin="5"/>
+        </StackLayout>
+
+        <Label Text="Elementy:" FontSize="22" Margin="0,10,0,5" HorizontalOptions="Center"/>
+
+        <CollectionView x:Name="elementy" SelectionMode="Single" Margin="0,0,0,20">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10" BackgroundColor="#f0f0f0" Margin="0,5">
+                        <Label Text="{Binding Nazwa}" FontSize="18"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
